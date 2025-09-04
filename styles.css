@@ -1,0 +1,880 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+body {
+    background-color: #121212;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #E0E0E0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+}
+
+/* BOTON SUBIR ARRIBA */
+.btn-subir {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 99; /* Asegura que esté sobre otros elementos */
+    cursor: pointer;
+    padding: 10px;
+    background-color: #9b5de5;
+    color: #121212;
+    border: none;
+    width: 60px; 
+    height: 60px; 
+    border-radius: 30px;
+    font-size: 35px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-subir.show {
+    display: block; /* Muestra el botón */
+}
+/* ---------------------------------------------------------------------------------------- */
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    margin-top: 125px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav ul li a {
+    color: #E0E0E0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #BB86FC;
+}
+
+.menuNav {
+    width: 700px;
+    height: auto;
+    background-color: #1F1B24;
+    padding: 10px 50px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+
+/* ESTILOS GENERALES PARA LAS SECTIONS */
+section {
+    /* margin-top: 200px; */
+    min-height: 80vh;
+    padding: 80px 20px;
+}
+
+section h2 {
+    margin-bottom: 60px;
+    font-size: 2rem;
+    position: relative;
+    color: #BB86FC;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #BB86FC;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+/* ------------------------------------------------------------------- */
+
+/* SECTION PRESENTACIÓN */
+.sectionPresentacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedorPresentacion {
+    display: flex;
+    width: 1050px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sectionPresentacion img {
+    width: 270px; 
+    height: 270px; 
+    border-radius: 250px;
+    object-fit: cover; 
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    border: 3px solid #BB86FC;
+}
+
+.sectionPresentacion img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.sectionPresentacion article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sectionPresentacion div article p{
+    text-align: left;
+}
+
+.sectionPresentacion div article p:nth-child(1){
+    font-size: 4.2rem;
+}
+.sectionPresentacion div article p:nth-child(2){
+    font-size: 2.5rem;
+}
+.sectionPresentacion div article p:nth-child(3){
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+}
+
+.botonConEnlace{
+    display: inline-block;
+    padding: 5px 10px;
+    background: #BB86FC;
+    color: #121212;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botonConEnlace:hover{
+    background: #9b5de5;
+    transform: translateY(-2px);
+}
+
+.btn1.animate__animated.animate__backInUp{
+    --animate-duration: 2s;
+}
+
+.btn2.animate__animated.animate__backInUp{
+    --animate-duration: 3s;
+}
+
+.btn3.animate__animated.animate__backInUp{
+    --animate-duration: 4s;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+/* SECTION ABOUT ME */
+
+.sectionAboutMe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedorAboutMe{
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+
+.contendorMiFoto img{
+    height: 300px;
+    width: auto;
+    border: 2px solid wheat ;
+    border-radius: 200px;
+}
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.contenedorPadre{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto; 
+}
+
+.contenedorPadre menu{
+    display: flex;
+}
+
+.menuSpan{
+    background-color: #1F1B24;
+    padding: 10px;
+}
+
+.contenedorPadre menu :nth-child(1){
+    border-top-left-radius: 20px;
+}
+.contenedorPadre menu :nth-child(2){
+    border-top-right-radius: 20px;
+}
+
+
+.menuSpan:hover {
+    border: 1px solid #BB86FC;
+    box-shadow: 0 6px 25px rgba(187,134,252,0.4);
+}
+
+.btnActive{
+    background-color: #9b5de5;
+}
+
+.contenedorSobreMi{
+    /* margin-top: 10px; */
+    padding: 15px;
+    display: block;
+    width: 650px;
+    background: #1F1B24;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px; /* Redondea la esquina inferior izquierda */
+    border-bottom-right-radius: 20px;
+}
+
+.contenedorSobreMi p{
+    font-size: 1.1rem;
+} 
+
+.contenedorInfo{
+    /* margin-top: 10px; */
+    padding: 15px;
+    display: none;
+    width: 650px;
+    background: #1F1B24;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px; /* Redondea la esquina inferior izquierda */
+    border-bottom-right-radius: 20px;
+}
+/* ------------------------------------------------- */
+
+/* SECTION FORMACIÓN */
+.sectionFormación {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardFormacion {
+    background: #1F1B24;
+    /* max-width: 400px; */
+    width: 450px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+    border: 1px solid #2A2A2A;
+    text-align: left;
+}
+
+.cardFormacion:hover {
+    transform: translateY(-8px);
+    border: 1px solid #BB86FC;
+    box-shadow: 0 6px 25px rgba(187,134,252,0.4);
+}
+
+.cardFormacion h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #BB86FC;
+}
+
+.cardFormacion p {
+    margin-bottom: 5px;
+    color: #B0B0B0;
+}
+
+.contenedorFormacion {
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px;
+}
+
+.contenedorFormacion div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 120px;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* SECTION PROYECTOS */
+.sectionProyectos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorProyectos {
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px;
+}
+.contenedorProyectos div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 120px;
+}
+
+/* CARDS GIRATORIAS */
+.plantillaGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    justify-items: center;
+}
+
+
+.sectionGiratorio{
+    margin: 100px 80px;
+}
+
+.wrapper{
+    perspective: 3000px;
+}
+.card{
+    height: 530px;
+    width: 360px;
+    transform-style: preserve-3d;
+    transition: transform .8s ease-in-out;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+
+.front-page, .back-page{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+.front-page{
+    /* background-image: url(./media/Luffy4.png);  */
+    background-size: cover;   /* hace que ocupe toda la card */
+    background-position: center; /* centra la parte importante de la imagen */
+    background-repeat: no-repeat; /* evita que se repita */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.card-info{
+    /* position: absolute;
+    bottom: 50px;
+    left: 45px; */
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5 );
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.card-title{
+    font-style: 2rem;
+    font-weight: bold;
+    color: #0fbcf9;
+}
+
+.card-subtitle{
+    font-size: 1.rem;
+    margin-top: 5px;
+    color: #0ff91b;
+}
+
+.back-page{
+    background-color: #1e272e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-content{
+    text-align: center;
+    padding: 20px;
+    max-width: 300px;
+}
+
+.card-content h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-description{
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card-button{
+    background-color: #0fbcf9;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+p .card-button:hover{
+    background-color: transparent;
+    color: #0fbcf9;
+    border: 1px solid #0fbcf9;
+
+}
+
+
+.sectionGiratorio{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.carrito-container{
+    width: 300px;
+}
+
+/* FIN SECTION PROYECTOS----------------------------------------------------------------------------------------------- */
+
+
+/* SECTION HABILIDADES */
+.sectionHabilidades {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorHabilidades {
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px;
+}
+
+.habilidades {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.habilidades h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #E0E0E0;
+}
+
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.card-skill {
+    background: #1F1B24; /* Fondo oscuro */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+    max-width: 250px;
+}
+
+.card-skill:hover {
+    transform: translateY(-8px);
+    background: #292633; /* Cambio de tono en hover */
+}
+
+.card-skill img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.card-skill h3 {
+    color: #F5F5F5;
+    margin-bottom: 10px;
+}
+
+.card-skill p {
+    color: #BDBDBD;
+    font-size: 0.9rem;
+}
+/* FIN SECTION HABILIDADES--------------------------------------------------------------------------------------------- */
+
+/* SECTION CONTACTO */
+.sectionContacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorContacto form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px;
+}
+
+.contenedorContacto form label{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+}
+
+.contenedorContacto form label input{
+    height: 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #E0E0E0;
+}
+
+.contenedorContacto form label textarea{
+    height: 100px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #E0E0E0;
+}
+
+.contenedorContacto form button{
+    font-size: 1rem;
+    padding: 5px 10px;
+    background: #BB86FC;
+    color: #121212;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.contenedorContacto form button:hover{
+    background: #9b5de5;
+    transform: translateY(-2px);
+}
+
+.contenedorContacto form label input::placeholder, .contenedorContacto form label textarea::placeholder {
+    font-size: 20px
+}
+
+
+/* FIN SECTION CONTACTO---------------------------------------------------------------------------------------------  */
+
+/* FOOTER */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e272e;
+}
+
+.footer div:nth-child(1){
+    padding-left: 50px;
+}
+
+.footer div:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-right: 50px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+.holographic-card {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;*/
+    overflow: hidden; 
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        0deg, 
+        transparent, 
+        transparent 30%, 
+        rgba(217, 0, 255, 0.3)
+    );
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.holographic-card:hover {
+transform: scale(1.05);
+box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.holographic-card:hover::before {
+opacity: 1;
+transform: rotate(-45deg) translateY(100%);
+}
+
+
+
+
+
+
+.nav-link {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-link.active {
+    color: #9b5de5;;        /* Color distintivo */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+
+
+/* ================== MEDIA QUERIES ================== */
+
+@media (max-width: 1024px) {
+    /* HEADER & NAVIGATION */
+    .menuNav {
+        width: 100%;
+        margin-top: 50px;
+        padding: 10px 20px;
+    }
+    
+    /* PRESENTACIÓN SECTION */
+    .contenedorPresentacion {
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
+    }
+    
+    .sectionPresentacion article {
+        align-items: center;
+    }
+    
+    .sectionPresentacion div article p {
+        text-align: center;
+    }
+    
+    .sectionPresentacion div article p:nth-child(1) {
+        font-size: 3rem;
+    }
+    .sectionPresentacion div article p:nth-child(2) {
+        font-size: 2rem;
+    }
+    .sectionPresentacion div article p:nth-child(3) {
+        font-size: 1.5rem;
+    }
+
+    /* ABOUT ME SECTION */
+    .contenedorAboutMe {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contenedorPadre,
+    .contenedorSobreMi,
+    .contenedorInfo {
+        width: 100%;
+    }
+
+    /* PROYECTOS SECTION */
+    .plantillaGrid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /* HABILIDADES SECTION */
+    .grid-habilidades {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* HEADER & NAVIGATION */
+    .menuNav {
+        width: 95%;
+        margin-top: 20px;
+        padding: 5px 10px;
+    }
+
+    .menuNav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .menuNav ul li a {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 50px 10px;
+        min-height: auto;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    
+    /* PRESENTACIÓN SECTION */
+    .contenedorPresentacion {
+        gap: 30px;
+    }
+    
+    .sectionPresentacion img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .sectionPresentacion div article p:nth-child(1) {
+        font-size: 2.5rem;
+    }
+    .sectionPresentacion div article p:nth-child(2) {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .sectionPresentacion div article p:nth-child(3) {
+        font-size: 1.2rem;
+    }
+    
+    .botonConEnlace {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* ABOUT ME SECTION */
+    .contendorMiFoto img {
+        height: 250px;
+    }
+
+    .contenedorPadre {
+        align-items: center;
+    }
+
+    .parent {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* FORMACIÓN SECTION */
+    .contenedorFormacion div {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .cardFormacion {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* HABILIDADES SECTION */
+    .grid-habilidades {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-skill {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* CONTACTO SECTION */
+    .contenedorContacto form label {
+        width: 100%;
+    }
+
+    .contenedorContacto form label input{
+        width: 300px;
+    }
+    
+    .contenedorContacto form button {
+        width: 150px;
+    }
+
+    /* FOOTER */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .footer div:nth-child(1),
+    .footer div:nth-child(3) {
+        padding: 0;
+    }
+    
+    .footer div:nth-child(3) {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+
